@@ -7,8 +7,7 @@
   "scripts": {
     "dev": "webpack serve --mode development",
     "type-check": "tsc --noEmit",
-    "build": "webpack --mode production",
-    "deploy": "npm run build && gh-pages -d dist"
+    "build": "webpack --mode production"
   },
   "keywords": [
     "portfolio",
