@@ -1,16 +1,10 @@
 /**
- * Game project data model
+ * Project data model
  */
 export interface Game {
-    id: string;
+    name: string;
     title: string;
-    description: string;
-    technologies: string[];
-    imageUrl: string;
-    liveUrl?: string;
-    githubUrl?: string;
-    gameplayUrl: string;
-    screenshots: string[];
-    category: 'puzzle' | 'action' | 'strategy' | 'other';
+    url: string;
+    image?: string;
 }
 //# sourceMappingURL=game.d.ts.map
