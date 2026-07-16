@@ -11,26 +11,3 @@ export interface ScrollState {
   hasMoreItems: boolean;
   isLoading: boolean;
 }
-
-/**
- * UI state management
- */
-export interface UIState {
-  currentSection: string;
-  isLoading: boolean;
-}
-
-/**
- * Application-wide state structure
- */
-export interface AppState {
-  games: {
-    portfolio: Game[];
-    currentSelected: Game | null;
-    scroll: ScrollState;
-  };
-  ui: UIState;
-  cache: {
-    gamesLastUpdated: number;
-  };
-}

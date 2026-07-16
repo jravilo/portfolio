@@ -1,30 +1,94 @@
-import { Game, ScrollState } from '../types';
-import { STORAGE_KEYS, PAGINATION } from '../utils/constants';
-import { filterArray, findItem } from '../utils/helpers';
-import storage from './storage';
+import { Game } from '../types';
+import foxMayhem from '../assets/images/fox-mayhem.jpg';
+import wildFalls2 from '../assets/images/wild-falls-2.webp';
+import merlinsGrimoire from '../assets/images/merlins-grimoire.webp';
+import clownMontyII from '../assets/images/3-clown-monty-ii.webp';
+import lionSagaOdyssey from '../assets/images/lion-saga-odyssey.webp';
+import lootAndLabyrinths from '../assets/images/loot-and-labyrinths.webp';
+import bladesAndBlessings from '../assets/images/3-blades-and-blessings.jpg';
+import tripleBeasts from '../assets/images/triple-beasts-of-fortune.jpg';
+import yugioh from '../assets/images/yugioh.jpg';
+import medievil from '../assets/images/medievil.png';
+import gominigolf from '../assets/images/gominigolf.jpg';
 
 /**
- * GameManager - Handles game project data, storage, and retrieval logic
- * Singleton pattern for centralized game management
+ * GameManager - Provides the hardcoded project list
  */
 export class GameManager {
   private static instance: GameManager;
-  private games: Game[] = [];
-  private scrollState: ScrollState;
+  private projects: Game[];
 
   private constructor() {
-    this.scrollState = {
-      currentPage: PAGINATION.INITIAL_PAGE,
-      itemsPerPage: PAGINATION.ITEMS_PER_PAGE,
-      hasMoreItems: true,
-      isLoading: false,
-    };
-    this.loadGames();
+    this.projects = [
+      {
+        name: 'Yu-Gi-Oh! Duel Generations',
+        title: 'Secret6, Inc — Expert Technical Developer',
+        url: 'https://yugioh.fandom.com/wiki/Yu-Gi-Oh!_Duel_Generation',
+        image: yugioh,
+      },
+      {
+        name: 'MediEvil PS4 Remake',
+        title: 'Secret6, Inc — Expert Technical Developer',
+        url: 'https://www.playstation.com/en-us/games/medievil/',
+        image: medievil,
+      },
+      {
+        name: 'GOMINIGOLF',
+        title: 'Devvit Hackathon - Developer',
+        url: 'https://www.reddit.com/r/gominigolf_dev/?playtest=gominigolf',
+        image: gominigolf,
+      },
+      {
+        name: 'Fox Mayhem',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/fox-mayhem',
+        image: foxMayhem,
+      },
+      {
+        name: 'Wild Falls 2',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/wild-falls-2',
+        image: wildFalls2,
+      },
+      {
+        name: 'Merlin\'s Grimoire',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/merlins-grimoire',
+        image: merlinsGrimoire,
+      },
+      {
+        name: '3 Clown Monty II',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/3-clown-monty-ii',
+        image: clownMontyII,
+      },
+      {
+        name: 'Lion Saga Odyssey',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/lion-saga-odyssey',
+        image: lionSagaOdyssey,
+      },
+      {
+        name: 'Loot & Labyrinths',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/loot-and-labyrinths',
+        image: lootAndLabyrinths,
+      },
+      {
+        name: '3 Blades & Blessings',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/3-blades-%26-blessings',
+        image: bladesAndBlessings,
+      },
+      {
+        name: 'Triple Beasts of Fortune',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/triple-beasts-of-fortune',
+        image: tripleBeasts,
+      },
+    ];
   }
 
-  /**
-   * Get singleton instance
-   */
   static getInstance(): GameManager {
     if (!GameManager.instance) {
       GameManager.instance = new GameManager();
@@ -32,132 +96,8 @@ export class GameManager {
     return GameManager.instance;
   }
 
-  /**
-   * Load games from storage
-   */
-  private loadGames(): void {
-    const stored = storage.load<Game[]>(STORAGE_KEYS.GAMES, []);
-    this.games = stored;
-  }
-
-  /**
-   * Get all games
-   */
-  getGames(): Game[] {
-    return this.games;
-  }
-
-  /**
-   * Get paginated games for infinite scroll
-   */
-  getPaginatedGames(page: number, limit: number): Game[] {
-    const start = page * limit;
-    const end = start + limit;
-    return this.games.slice(start, end);
-  }
-
-  /**
-   * Get game by ID
-   */
-  getGameById(id: string): Game | undefined {
-    return findItem(this.games, (g) => g.id === id);
-  }
-
-  /**
-   * Get games by category
-   */
-  getGamesByCategory(category: string): Game[] {
-    return filterArray(this.games, (g) => g.category === category);
-  }
-
-  /**
-   * Search games by query
-   */
-  searchGames(query: string): Game[] {
-    const lowerQuery = query.toLowerCase();
-    return filterArray(this.games, (g) =>
-      g.title.toLowerCase().includes(lowerQuery) ||
-      g.description.toLowerCase().includes(lowerQuery) ||
-      g.category.toLowerCase().includes(lowerQuery)
-    );
-  }
-
-  /**
-   * Add new game
-   */
-  addGame(game: Game): void {
-    this.games.push(game);
-    this.saveGames();
-  }
-
-  /**
-   * Update existing game
-   */
-  updateGame(id: string, updates: Partial<Game>): void {
-    const game = this.getGameById(id);
-    if (game) {
-      Object.assign(game, updates);
-      this.saveGames();
-    }
-  }
-
-  /**
-   * Delete game
-   */
-  deleteGame(id: string): void {
-    const index = this.games.findIndex((g) => g.id === id);
-    if (index > -1) {
-      this.games.splice(index, 1);
-      this.saveGames();
-    }
-  }
-
-  /**
-   * Get scroll state
-   */
-  getScrollState(): ScrollState {
-    return this.scrollState;
-  }
-
-  /**
-   * Update scroll state
-   */
-  setScrollState(state: Partial<ScrollState>): void {
-    this.scrollState = { ...this.scrollState, ...state };
-  }
-
-  /**
-   * Reset scroll state
-   */
-  resetScrollState(): void {
-    this.scrollState = {
-      currentPage: PAGINATION.INITIAL_PAGE,
-      itemsPerPage: PAGINATION.ITEMS_PER_PAGE,
-      hasMoreItems: true,
-      isLoading: false,
-    };
-  }
-
-  /**
-   * Get total game count
-   */
-  getTotalCount(): number {
-    return this.games.length;
-  }
-
-  /**
-   * Save games to storage
-   */
-  private saveGames(): void {
-    storage.save(STORAGE_KEYS.GAMES, this.games);
-  }
-
-  /**
-   * Clear all games
-   */
-  clearGames(): void {
-    this.games = [];
-    storage.remove(STORAGE_KEYS.GAMES);
+  getProjects(): Game[] {
+    return this.projects;
   }
 }
 

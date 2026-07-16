@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: process.env.NODE_ENV === 'production' ? '/portfolio/' : '/',
+    publicPath: '',
   },
   module: {
     rules: [
@@ -19,6 +19,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif|webp|svg)$/i,
+        type: 'asset/resource',
       },
     ],
   },
