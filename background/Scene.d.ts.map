@@ -1,0 +1,1 @@
+{"version":3,"file":"Scene.d.ts","sourceRoot":"","sources":["../../src/background/Scene.tsx"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,gBAAgB,EAAE,MAAM,UAAU,CAAC;AAEjD,UAAU,UAAU;IAClB,MAAM,EAAE,gBAAgB,CAAC;CAC1B;AAED,wBAAgB,KAAK,CAAC,EAAE,MAAM,EAAE,EAAE,UAAU,+BAwB3C"}
