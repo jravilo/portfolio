@@ -12,7 +12,6 @@
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
   transition: all var(--transition-duration) var(--transition-timing);
-  box-shadow: 0 2px 8px var(--shadow-color);
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -20,7 +19,6 @@
 
 .project-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 .project-card__content {
@@ -73,12 +71,6 @@
   background-color: #d1ecf1;
   border: 1px solid #bee5eb;
   color: #0c5460;
-}
-
-.notification--warning {
-  background-color: #fff3cd;
-  border: 1px solid #ffeaa7;
-  color: #856404;
 }
 
 /* Buttons */

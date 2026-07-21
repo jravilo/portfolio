@@ -12,10 +12,6 @@
   }
 }
 
-.fade-in {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
 /* Fade Out Animation */
 @keyframes fadeOut {
   from {
@@ -24,10 +20,6 @@
   to {
     opacity: 0;
   }
-}
-
-.fade-out {
-  animation: fadeOut 0.3s ease-in-out;
 }
 
 /* Slide In Animation */
@@ -42,10 +34,6 @@
   }
 }
 
-.slide-in {
-  animation: slideIn 0.3s ease-in-out;
-}
-
 /* Slide In From Left */
 @keyframes slideInLeft {
   from {
@@ -56,10 +44,6 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-.slide-in-left {
-  animation: slideInLeft 0.3s ease-in-out;
 }
 
 /* Slide In From Right */
@@ -74,10 +58,6 @@
   }
 }
 
-.slide-in-right {
-  animation: slideInRight 0.3s ease-in-out;
-}
-
 /* Slide Out Animation */
 @keyframes slideOut {
   from {
@@ -88,10 +68,6 @@
     transform: translateY(20px);
     opacity: 0;
   }
-}
-
-.slide-out {
-  animation: slideOut 0.3s ease-in-out;
 }
 
 /* Pulse Animation - for loading skeleton */
@@ -105,10 +81,6 @@
   }
 }
 
-.pulse {
-  animation: pulse 1.5s infinite;
-}
-
 /* Spin Animation - for loading spinners */
 @keyframes spin {
   from {
@@ -117,10 +89,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.spin {
-  animation: spin 1s linear infinite;
 }
 
 /* Bounce Animation */
@@ -132,10 +100,6 @@
   50% {
     transform: translateY(-10px);
   }
-}
-
-.bounce {
-  animation: bounce 0.6s ease-in-out;
 }
 
 /* Scale Animation */
@@ -150,10 +114,6 @@
   }
 }
 
-.scale-in {
-  animation: scaleIn 0.3s ease-in-out;
-}
-
 /* Heartbeat Animation */
 @keyframes heartbeat {
   0%,
@@ -166,10 +126,6 @@
   50% {
     transform: scale(1);
   }
-}
-
-.heartbeat {
-  animation: heartbeat 0.6s ease-in-out;
 }
 
 /* Shake Animation */
@@ -193,10 +149,6 @@
   }
 }
 
-.shake {
-  animation: shake 0.5s ease-in-out;
-}
-
 /* Gradient Animation */
 @keyframes gradientShift {
   0% {
@@ -208,11 +160,6 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-.gradient-animate {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
 }
 
 /* Theme transition */
@@ -233,46 +180,6 @@ html {
 *:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
-}
-
-/* Loading state */
-.loading {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-/* Hidden state */
-.hidden {
-  display: none !important;
-}
-
-/* Visible state */
-.visible {
-  display: block !important;
-}
-
-/* Active state */
-.active {
-  display: block;
-}
-
-/* Disabled state */
-[disabled],
-.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* Card entrance animation */
-.card {
-  animation: slideIn 0.3s ease-in-out;
-}
-
-@for $i from 1 to 10 {
-  .card:nth-child(#{$i}) {
-    animation-delay: calc(#{$i} * 0.05s);
-  }
 }
 
 /* Responsive animations */

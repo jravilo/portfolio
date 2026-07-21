@@ -25,19 +25,6 @@ export class UIController {
   }
 
   /**
-   * Show section by ID
-   */
-  showSection(sectionId: string): void {
-    document.querySelectorAll('section[id]').forEach((section) => {
-      section.classList.remove('active');
-    });
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.classList.add('active');
-    }
-  }
-
-  /**
    * Display notification message
    */
   showNotification(message: string, type: 'success' | 'error' | 'info' = 'info'): void {

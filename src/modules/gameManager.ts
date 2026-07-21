@@ -15,10 +15,9 @@ import gominigolf from '../assets/images/gominigolf.jpg';
  * GameManager - Provides the hardcoded project list
  */
 export class GameManager {
-  private static instance: GameManager;
   private projects: Game[];
 
-  private constructor() {
+  constructor() {
     this.projects = [
       {
         name: 'Yu-Gi-Oh! Duel Generations',
@@ -89,16 +88,9 @@ export class GameManager {
     ];
   }
 
-  static getInstance(): GameManager {
-    if (!GameManager.instance) {
-      GameManager.instance = new GameManager();
-    }
-    return GameManager.instance;
-  }
-
   getProjects(): Game[] {
     return this.projects;
   }
 }
 
-export default GameManager.getInstance();
+export default new GameManager();

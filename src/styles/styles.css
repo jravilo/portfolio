@@ -10,8 +10,8 @@
 
 /* CSS Variables for theming - Dark mode is default */
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
+  --primary-color: #0047ab;
+  --secondary-color: #d8d8d8;
   --success-color: #28a745;
   --danger-color: #dc3545;
   --warning-color: #ffc107;
@@ -23,8 +23,8 @@
   --border-color: #495057;
   --shadow-color: rgba(0, 0, 0, 0.3);
 
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica',
-    'Arial', sans-serif;
+  --font-family-base: 'Tenor Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Helvetica', 'Arial', sans-serif;
   --font-size-base: 16px;
   --line-height-base: 1.5;
 
