@@ -10,10 +10,6 @@ export declare class UIController {
      */
     renderProjects(projects: Game[]): void;
     /**
-     * Show section by ID
-     */
-    showSection(sectionId: string): void;
-    /**
      * Display notification message
      */
     showNotification(message: string, type?: 'success' | 'error' | 'info'): void;

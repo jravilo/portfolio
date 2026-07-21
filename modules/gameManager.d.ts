@@ -3,10 +3,8 @@ import { Game } from '../types';
  * GameManager - Provides the hardcoded project list
  */
 export declare class GameManager {
-    private static instance;
     private projects;
-    private constructor();
-    static getInstance(): GameManager;
+    constructor();
     getProjects(): Game[];
 }
 declare const _default: GameManager;
