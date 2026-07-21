@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [20.x, 22.x]
 
     steps:
     - uses: actions/checkout@v4
@@ -25,12 +25,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: Install
+      run: npm install
+
+    - name: Type check
+      run: npm run type-check
+
     - name: Build
-      run: |
-        npm install
-        npm run build
+      run: npm run build
 
     - name: Deploy
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

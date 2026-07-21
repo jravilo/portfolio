@@ -8,8 +8,10 @@
   flex-direction: column;
   gap: var(--spacing-sm);
   padding: var(--spacing-xl);
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background-color: rgba(45, 45, 45, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(73, 80, 87, 0.5);
   border-radius: var(--border-radius-lg);
   transition: all var(--transition-duration) var(--transition-timing);
   text-decoration: none;

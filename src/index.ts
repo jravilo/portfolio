@@ -4,6 +4,7 @@
  */
 
 import PortfolioApp from './app';
+import { initBackground } from './background';
 import './styles/styles.css';
 import './styles/layout.css';
 import './styles/components.css';
@@ -18,6 +19,7 @@ if (document.readyState === 'loading') {
 
 async function initializeApp(): Promise<void> {
   try {
+    initBackground();
     const app = PortfolioApp;
     await app.init();
     console.log('Portfolio app is ready');

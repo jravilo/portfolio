@@ -76,7 +76,9 @@ section.active {
 header {
   padding: var(--spacing-md) var(--spacing-md);
   text-align: center;
-  background: var(--primary-color);
+  background: rgba(0, 71, 171, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: white;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -123,7 +125,9 @@ header p {
 /* Footer */
 footer {
   padding: var(--spacing-xl) var(--spacing-lg);
-  background-color: var(--bg-secondary);
+  background-color: rgba(45, 45, 45, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border-color);
   text-align: center;
   margin-top: auto;
