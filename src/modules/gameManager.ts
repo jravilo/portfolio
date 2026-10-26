@@ -12,7 +12,6 @@ import medievil from '../assets/images/medievil.png';
 import gominigolf from '../assets/images/gominigolf.jpg';
 import sobeksGodlySpins from '../assets/images/sobeks-godly-spins.webp';
 import bigWinCatPawsperity from '../assets/images/big-win-cat-pawsperity.webp';
-import rowdyRabbits from '../assets/images/rowdy-rabbits-collect-and-win.webp';
 
 /**
  * GameManager - Provides the hardcoded project list
