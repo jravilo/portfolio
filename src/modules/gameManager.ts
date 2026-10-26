@@ -99,13 +99,7 @@ export class GameManager {
         title: 'Play\'n GO — Frontend Developer',
         url: 'https://www.playngo.com/games/big-win-cat-pawsperity',
         image: bigWinCatPawsperity,
-      },
-      {
-        name: 'Rowdy Rabbits Collect & Win',
-        title: 'Play\'n GO — Frontend Developer',
-        url: 'https://www.playngo.com/games/rowdy-rabbits-collect-and-win',
-        image: rowdyRabbits,
-      },
+      }
     ];
   }
 
