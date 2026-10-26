@@ -10,6 +10,9 @@ import tripleBeasts from '../assets/images/triple-beasts-of-fortune.jpg';
 import yugioh from '../assets/images/yugioh.jpg';
 import medievil from '../assets/images/medievil.png';
 import gominigolf from '../assets/images/gominigolf.jpg';
+import sobeksGodlySpins from '../assets/images/sobeks-godly-spins.webp';
+import bigWinCatPawsperity from '../assets/images/big-win-cat-pawsperity.webp';
+import rowdyRabbits from '../assets/images/rowdy-rabbits-collect-and-win.webp';
 
 /**
  * GameManager - Provides the hardcoded project list
@@ -70,13 +73,13 @@ export class GameManager {
       {
         name: 'Loot & Labyrinths',
         title: 'Play\'n GO — Frontend Developer',
-        url: 'https://www.playngo.com/games/loot-and-labyrinths',
+        url: 'https://www.playngo.com/games/loot-labyrinths',
         image: lootAndLabyrinths,
       },
       {
         name: '3 Blades & Blessings',
         title: 'Play\'n GO — Frontend Developer',
-        url: 'https://www.playngo.com/games/3-blades-%26-blessings',
+        url: 'https://www.playngo.com/games/3-blades-blessings',
         image: bladesAndBlessings,
       },
       {
@@ -84,6 +87,24 @@ export class GameManager {
         title: 'Play\'n GO — Frontend Developer',
         url: 'https://www.playngo.com/games/triple-beasts-of-fortune',
         image: tripleBeasts,
+      },
+      {
+        name: 'Sobek\'s Godly Spins',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/sobek\'s-godly-spins',
+        image: sobeksGodlySpins,
+      },
+      {
+        name: 'Big Win Cat Pawsperity',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/big-win-cat-pawsperity',
+        image: bigWinCatPawsperity,
+      },
+      {
+        name: 'Rowdy Rabbits Collect & Win',
+        title: 'Play\'n GO — Frontend Developer',
+        url: 'https://www.playngo.com/games/rowdy-rabbits-collect-and-win',
+        image: rowdyRabbits,
       },
     ];
   }
